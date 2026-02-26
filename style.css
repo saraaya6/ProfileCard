@@ -1,0 +1,119 @@
+/* ===== CSS Variables للألوان ===== */
+:root {
+    --bg-primary: #f8f9fa;
+    --bg-secondary: #ffffff;
+    --text-primary: #1a1a1a;
+    --text-secondary: #666666;
+    --accent-color: #5b21b6;
+    --accent-light: #a78bfa;
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    --border-color: #e5e7eb;
+}
+
+/* Dark Theme */
+body.dark-theme {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --text-primary: #f1f5f9;
+    --text-secondary: #cbd5e1;
+    --accent-color: #a78bfa;
+    --accent-light: #ddd6fe;
+    --shadow-color: rgba(0, 0, 0, 0.3);
+    --border-color: #334155;
+}
+
+/* ===== Reset & Base Styles ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Cairo', sans-serif;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    transition: background-color 0.3s ease, color 0.3s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+/* ===== Theme Toggle Button ===== */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background-color: var(--bg-secondary);
+    border: 2px solid var(--border-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    color: var(--text-primary);
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 8px var(--shadow-color);
+    z-index: 100;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    border-color: var(--accent-color);
+}
+
+/* ===== Profile Card ===== */
+.profile-container {
+    background-color: var(--bg-secondary);
+    border-radius: 20px;
+    padding: 50px 40px;
+    max-width: 400px;
+    width: 100%;
+    box-shadow: 0 10px 40px var(--shadow-color);
+    text-align: center;
+    animation: slideUp 0.6s ease-out;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.profile-image {
+    width: 120px;
+    height: 120px;
+    margin: 0 auto 25px;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-light));
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 60px;
+    color: white;
+}
+
+.profile-name { font-size: 28px; font-weight: 700; margin-bottom: 8px; }
+.profile-title { color: var(--accent-color); font-weight: 500; margin-bottom: 20px; }
+.profile-bio { color: var(--text-secondary); line-height: 1.6; margin-bottom: 35px; }
+
+.divider { height: 1px; background-color: var(--border-color); margin: 30px 0; }
+
+.social-links { display: flex; justify-content: center; gap: 15px; }
+.social-link {
+    width: 45px; height: 45px; border-radius: 50%;
+    background-color: var(--bg-primary);
+    display: flex; justify-content: center; align-items: center;
+    text-decoration: none; color: var(--accent-color);
+    transition: all 0.3s ease;
+}
+
+.social-link:hover {
+    background-color: var(--accent-color);
+    color: white;
+    transform: translateY(-5px);
+}
